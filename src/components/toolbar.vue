@@ -13,6 +13,6 @@
 
 <template>
     <header>
-      <h1>Prsnt.co</h1>
+      <h1>prsnt.co</h1>
     </header>
 </template>
