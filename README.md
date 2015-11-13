@@ -21,7 +21,7 @@ npm run dev
 
 Get a copy of gh-pages set-up:
 ```
-git clone git@github.com:guidobouman/prsnt.co.git gh-pages && cd gh-pages && git checkout gh-pages
+git clone git@github.com:guidobouman/prsnt.co.git --branch gh-pages gh-pages
 ```
 
 Available commands:
