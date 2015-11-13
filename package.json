@@ -14,7 +14,10 @@
   },
   "scripts": {
     "dev": "webpack-dev-server --inline --hot --quiet --port 3000",
-    "build": "export NODE_ENV=production && webpack --progress --hide-modules"
+    "release": "npm run clean && npm run build && npm run copy-index",
+    "clean": "rm -rf build/*",
+    "build": "export NODE_ENV=production && webpack --progress --hide-modules",
+    "copy-index": "cp index.html build/index.html"
   },
   "dependencies": {
     "vue": "^1.0.0"
