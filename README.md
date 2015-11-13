@@ -1,7 +1,7 @@
 # prsnt.co
-Seriously simple presentation tool.
+Seriously simple presentation tool. Built in Vue with Webpack.
 
-## Installation
+## Install
 
 Clone the repo, cd into it and install dependencies:
 ```
@@ -10,14 +10,14 @@ cd prsnt.co
 npm install
 ```
 
-## Development
+## Develop
 
 Start your development environment on localhost:3000:
 ```
 npm run dev
 ```
 
-## Releasing
+## Deploy
 
 Get a copy of gh-pages set-up:
 ```
