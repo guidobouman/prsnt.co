@@ -14,10 +14,11 @@
   },
   "scripts": {
     "dev": "webpack-dev-server --inline --hot --quiet --port 3000",
-    "release": "npm run clean && npm run build && npm run copy-index",
     "clean": "rm -rf build/*",
     "build": "export NODE_ENV=production && webpack --progress --hide-modules",
-    "copy-index": "cp index.html build/index.html"
+    "copy-index": "cp index.html build/index.html",
+    "release": "npm run clean && npm run build && npm run copy-index",
+    "deploy": "cp build/* gh-pages/ && cd gh-pages && git add . && git commit -m \"Release at $(date)\" && git push"
   },
   "dependencies": {
     "vue": "^1.0.0"
