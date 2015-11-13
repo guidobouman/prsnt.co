@@ -27,5 +27,5 @@ git clone git@github.com:guidobouman/prsnt.co.git --branch gh-pages gh-pages
 Available commands:
 ```
 npm run release // Create a release into the build directory.
-npm deploy // Copy latest release to gh-pages & deploy to github.
+npm run deploy // Copy latest release to gh-pages & deploy to github.
 ```
