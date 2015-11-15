@@ -1,6 +1,7 @@
 <style lang="stylus" scoped>
-  section
+  .workspace
     flex 1
+    position relative
     display flex
     background #f0f0f0
 
@@ -9,7 +10,7 @@
 </style>
 
 <template>
-  <section>
+  <section class="workspace">
     <h1>
       Your workspace.
     </h1>
