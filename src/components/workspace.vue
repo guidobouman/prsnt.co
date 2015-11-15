@@ -14,5 +14,16 @@
     <h1>
       Your workspace.
     </h1>
+    <slides></slides>
   </section>
 </template>
+
+<script>
+  import Slides from './slides.vue'
+
+  export default {
+    components: {
+      Slides
+    }
+  }
+</script>
