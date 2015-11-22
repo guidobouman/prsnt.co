@@ -14,6 +14,10 @@ module.exports = {
         loader: 'vue'
       },
       {
+        test: /models\/.+\.js$/,
+        loader: 'babel?presets[]=es2015'
+      },
+      {
         test: /\.(png|jpg|gif|svg)$/,
         loader: 'file?name=[name].[ext]?[hash]'
       }
