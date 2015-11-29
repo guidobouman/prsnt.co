@@ -14,7 +14,7 @@ module.exports = {
         loader: 'vue'
       },
       {
-        test: /models\/.+\.js$/,
+        test: /src\/.+\.js$/,
         loader: 'babel?presets[]=es2015'
       },
       {
