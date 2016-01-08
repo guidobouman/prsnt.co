@@ -18,10 +18,17 @@ export default {
     return undefined
   },
   addSlide(text) {
-    return this.state.slides.push({
-      _uuid: this._uuid(),
-      text: text || ''
+    const uuid = this._uuid()
+    const returnValue = this.state.slides.push({
+      _uuid: uuid,
+      text: text || '',
     })
+
+    if(!this.state.activeSlideId) {
+      this.activateSlide(uuid)
+    }
+
+    return returnValue
   },
   _uuid() {
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => {
