@@ -28,14 +28,32 @@
 
 <template>
   <div class="slides">
-    <div class="slide"></div>
-    <div class="slide"></div>
-    <div class="slide"></div>
-    <div class="slide"></div>
-    <div class="slide"></div>
-    <div class="slide"></div>
-    <div class="slide"></div>
-    <div class="slide"></div>
-    <div class="slide"></div>
+    <div class="slide" v-for="slide in slideDeck.slides" @click="activateSlide(slide._uuid)">
+      #{{ $index + 1 }} {{ slide._uuid == slideDeck.activeSlideId ? 'ACTIVE' : 'inactive' }}
+    </div>
+    <div class="slide" @click="addSlide">
+      Add slide
+    </div>
   </div>
 </template>
+
+
+<script>
+  import SlideDeck from '../stores/slide-deck.js'
+
+  export default {
+    data() {
+      return {
+        slideDeck: SlideDeck.state,
+      }
+    },
+    methods: {
+      activateSlide(uuid) {
+        SlideDeck.activateSlide(uuid)
+      },
+      addSlide() {
+        SlideDeck.addSlide()
+      },
+    }
+  }
+</script>
