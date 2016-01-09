@@ -6,13 +6,13 @@ export default {
   },
   activateSlide(uuid) {
     const slide = this.state.slides.find(slide => {
-      return slide._uuid == uuid;
-    });
+      return slide._uuid == uuid
+    })
 
     if(slide) {
-      this.state.activeSlideId = uuid;
-      this.state.activeSlide = slide;
-      return slide;
+      this.state.activeSlideId = uuid
+      this.state.activeSlide = slide
+      return slide
     }
 
     return undefined
@@ -34,6 +34,6 @@ export default {
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => {
       const r = crypto.getRandomValues(new Uint8Array(1))[0]%16|0, v = c == 'x' ? r : (r&0x3|0x8)
       return v.toString(16)
-    });
+    })
   },
-};
+}
