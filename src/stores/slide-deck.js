@@ -1,9 +1,12 @@
+/* globals: localStorage, JSON, Object, crypto, Uint8Array */
+
 export default {
   state: {
     slides: [],
     activeSlideId: null,
     activeSlide: null,
   },
+  storeKey: 'slide-deck',
   activateSlide(uuid) {
     const slide = this.state.slides.find(slide => {
       return slide._uuid == uuid
@@ -12,6 +15,9 @@ export default {
     if(slide) {
       this.state.activeSlideId = uuid
       this.state.activeSlide = slide
+
+      this.saveState()
+
       return slide
     }
 
@@ -24,11 +30,28 @@ export default {
       text: text || '',
     })
 
+    this.saveState()
+
     if(!this.state.activeSlideId) {
       this.activateSlide(uuid)
     }
 
     return returnValue
+  },
+  saveState() {
+    return localStorage.setItem(this.storeKey, JSON.stringify(this.state))
+  },
+  loadState() {
+    const cache = JSON.parse(localStorage.getItem(this.storeKey))
+    // Don't replace [this.state] as Vue works by reference.
+    // Replace the properties instead:
+    for(const key in cache) {
+      if(cache.hasOwnProperty(key)) {
+        this.state[key] = cache[key]
+      }
+    }
+
+    return this.state
   },
   _uuid() {
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => {
