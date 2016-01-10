@@ -28,11 +28,15 @@
 <script>
   import Toolbar from './components/toolbar.vue'
   import Workspace from './components/workspace.vue'
+  import SlideDeck from './stores/slide-deck.js'
 
   export default {
     components: {
       Toolbar,
       Workspace
+    },
+    created() {
+      SlideDeck.loadState()
     }
   }
 </script>
