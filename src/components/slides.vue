@@ -39,21 +39,21 @@
 
 
 <script>
-  import SlideDeck from '../stores/slide-deck.js'
+  import SlideDeck from '../stores/slide-deck.js';
 
   export default {
     data() {
       return {
         slideDeck: SlideDeck.state,
-      }
+      };
     },
     methods: {
       activateSlide(uuid) {
-        SlideDeck.activateSlide(uuid)
+        SlideDeck.activateSlide(uuid);
       },
       addSlide() {
-        SlideDeck.addSlide()
+        SlideDeck.addSlide();
       },
-    }
-  }
+    },
+  };
 </script>

@@ -22,17 +22,17 @@
 </template>
 
 <script>
-  import Slides from './slides.vue'
-  import SlideDeck from '../stores/slide-deck.js'
+  import Slides from './slides.vue';
+  import SlideDeck from '../stores/slide-deck.js';
 
   export default {
     data() {
       return {
-        slideDeck: SlideDeck.state
-      }
+        slideDeck: SlideDeck.state,
+      };
     },
     components: {
-      Slides
-    }
-  }
+      Slides,
+    },
+  };
 </script>

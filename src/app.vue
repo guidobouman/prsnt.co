@@ -26,17 +26,17 @@
 </template>
 
 <script>
-  import Toolbar from './components/toolbar.vue'
-  import Workspace from './components/workspace.vue'
-  import SlideDeck from './stores/slide-deck.js'
+  import Toolbar from './components/toolbar.vue';
+  import Workspace from './components/workspace.vue';
+  import SlideDeck from './stores/slide-deck.js';
 
   export default {
     components: {
       Toolbar,
-      Workspace
+      Workspace,
     },
     created() {
-      SlideDeck.loadState()
-    }
-  }
+      SlideDeck.loadState();
+    },
+  };
 </script>

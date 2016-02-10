@@ -23,11 +23,11 @@
 
 
 <script>
-  import Actions from './actions.vue'
+  import Actions from './actions.vue';
 
   export default {
     components: {
-      Actions
-    }
-  }
+      Actions,
+    },
+  };
 </script>
