@@ -1,38 +1,26 @@
 <style lang="stylus" scoped>
   .workspace
     flex 1
-    position relative
     display flex
+    position relative
     background #f0f0f0
-
-  h1
-    margin auto
 </style>
 
 <template>
   <section class="workspace">
-    <h1>
-      Active slide ID:<br/>
-      <small>
-        {{ slideDeck.activeSlide ? slideDeck.activeSlide._uuid : 'No slide active.' }}
-      </small>
-    </h1>
     <slide-list></slide-list>
+    <slide-preview></slide-preview>
   </section>
 </template>
 
 <script>
   import SlideList from './slide-list.vue';
-  import SlideDeck from '../stores/slide-deck.js';
+  import SlidePreview from './slide-preview.vue';
 
   export default {
-    data() {
-      return {
-        slideDeck: SlideDeck.state,
-      };
-    },
     components: {
       SlideList,
+      SlidePreview,
     },
   };
 </script>
