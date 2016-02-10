@@ -17,12 +17,12 @@
         {{ slideDeck.activeSlide ? slideDeck.activeSlide._uuid : 'No slide active.' }}
       </small>
     </h1>
-    <slides></slides>
+    <slide-list></slide-list>
   </section>
 </template>
 
 <script>
-  import Slides from './slides.vue';
+  import SlideList from './slide-list.vue';
   import SlideDeck from '../stores/slide-deck.js';
 
   export default {
@@ -32,7 +32,7 @@
       };
     },
     components: {
-      Slides,
+      SlideList,
     },
   };
 </script>

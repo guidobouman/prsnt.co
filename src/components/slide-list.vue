@@ -1,5 +1,5 @@
 <style lang="stylus" scoped>
-  .slides
+  .slide-list
     position absolute
     left 0
     top 0
@@ -16,7 +16,7 @@
       transform translate3D(0,0,0)
       transition-delay 0ms
 
-  .slide
+  .thumbnail
     width 15vw
     height 15vh
     background #f0f0f0
@@ -27,11 +27,11 @@
 
 
 <template>
-  <div class="slides">
-    <div class="slide" v-for="slide in slideDeck.slides" @click="activateSlide(slide._uuid)">
+  <div class="slide-list">
+    <div class="thumbnail" v-for="slide in slideDeck.slides" @click="activateSlide(slide._uuid)">
       #{{ $index + 1 }} {{ slide._uuid == slideDeck.activeSlideId ? 'ACTIVE' : 'inactive' }}
     </div>
-    <div class="slide" @click="addSlide">
+    <div class="thumbnail" @click="addSlide">
       Add slide
     </div>
   </div>
